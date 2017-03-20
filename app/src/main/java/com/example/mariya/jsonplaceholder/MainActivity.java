@@ -152,14 +152,11 @@ public class MainActivity extends AppCompatActivity {
 
         public Boolean ParseJson () {
             try {
-                //JSONArray contacts = new JSONArray(jsonStr);
+                JSONArray json = new JSONArray(jsonStr);
 
-                JSONObject jsonObj = new JSONObject(jsonStr);
-                JSONArray contacts = jsonObj.getJSONArray("contacts");
+                   for (int i = 0; i < json.length(); i++) {
 
-                for (int i = 0; i < contacts.length(); i++) {
-
-                   JSONObject c = contacts.getJSONObject(i);
+                   JSONObject c = json.getJSONObject(i);
 
                     String id = c.getString("id");
                     String name = c.getString("name");
